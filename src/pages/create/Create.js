@@ -5,7 +5,7 @@ import React from 'react';
 import { useCollection } from '../../hooks/useCollection';
 import { timestamp } from '../../firebase/config';
 import { useAuthContext } from '../../hooks/useAuthContext';
-import { useFirestore} from '../../hooks/useFirestore'
+import { useFirestore } from '../../hooks/useFirestore';
 import { useHistory } from 'react-router-dom';
 
 const categories = [
@@ -16,20 +16,20 @@ const categories = [
 ];
 
 export default function Create() {
-  const {addDocument, response} = useFirestore('projects')
+  const { addDocument, response } = useFirestore('projects');
   const history = useHistory('');
   const { documents } = useCollection('users');
   const [users, setUsers] = useState([]);
   const [name, setName] = useState('');
   const [details, setDetails] = useState('');
   const [dueDate, setDueDate] = useState('');
-  
+
   const { user } = useAuthContext();
 
   //select states
   const [category, setCategory] = useState('');
   const [assignedUsers, setAssignedUsers] = useState([]);
-  const [formError, setFormError ] = useState(null);
+  const [formError, setFormError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,10 +48,10 @@ export default function Create() {
     const createdBy = {
       displayName: user.displayName,
       photoURL: user.photoURL,
-      id: user.uid
+      id: user.uid,
     };
 
-    const assignedUserList = assignedUsers.map((userAssigned) => {
+    const assignedUsersList = assignedUsers.map((userAssigned) => {
       return {
         displayName: userAssigned.value.displayName,
         photoURL: userAssigned.value.photoURL,
@@ -67,11 +67,11 @@ export default function Create() {
       dueDate: timestamp.fromDate(new Date(dueDate)),
       comment: [],
       createdBy,
-      assignedUserList,
+      assignedUsersList,
     };
 
     await addDocument(project);
-    if(!response.error){
+    if (!response.error) {
       history.push('/');
     }
   };
