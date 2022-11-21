@@ -5,7 +5,7 @@
   grid-gap: 20px;
 }
 .project-list a {
-  background-color: var(--primary-color);
+  background-color: #fff;
   padding: 16px;
   border-radius: 6px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
@@ -17,7 +17,7 @@
   color: var(--heading-color);
 }
 .project-list p {
-  color: var(--text-color);
+  color: var(--text-color-drk);
   font-size: 0.9em;
 }
 .project-list .assigned-to {
