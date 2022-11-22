@@ -5,6 +5,7 @@ import { useDocument } from '../../hooks/useDocument'
 //styles
 import './Project.css'
 import React from 'react'
+import ProjectSummary from './ProjectSummary'
 
 export default function Project() {
   //extract the id we need
@@ -21,7 +22,7 @@ export default function Project() {
   return (
     //display the document title
     <div className='project-details'>
-      <h1>{document.name}</h1>
+     <ProjectSummary project={document} />
     </div>
   )
 }
