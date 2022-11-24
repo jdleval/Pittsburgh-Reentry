@@ -6,6 +6,7 @@ import { useDocument } from '../../hooks/useDocument'
 import './Project.css'
 import React from 'react'
 import ProjectSummary from './ProjectSummary'
+import ProjectComments from './ProjectComments'
 
 export default function Project() {
   //extract the id we need
@@ -23,6 +24,7 @@ export default function Project() {
     //display the document title
     <div className='project-details'>
      <ProjectSummary project={document} />
+     <ProjectComments />
     </div>
   )
 }
