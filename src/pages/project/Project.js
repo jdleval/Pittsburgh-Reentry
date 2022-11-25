@@ -24,7 +24,7 @@ export default function Project() {
     //display the document title
     <div className='project-details'>
      <ProjectSummary project={document} />
-     <ProjectComments />
+     <ProjectComments project={document} />
     </div>
   )
 }
