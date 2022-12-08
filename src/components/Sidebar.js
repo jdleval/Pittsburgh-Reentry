@@ -10,24 +10,17 @@ import FindWork from '../assets/find_work.svg';
 import Housing from '../assets/housing.svg';
 import Support from '../assets/support.svg';
 import Treatment from '../assets/treatment.svg';
-import Unauthorized from '../pages/unauthorized/Unauthorized';
-import { useAuthContext } from '../hooks/useAuthContext';
-import Avatar from './Avatar.js';
 
 import React from 'react';
 
 export default function Sidebar() {
-  const {user} = useAuthContext()
-
   return (
     <div className="sidebar">
       <div className="sidebar-content">
-      {user && 
         <div className="user">
-          <Avatar src={user.photoURL} />
-          <p>Hey, {user.displayName}</p>
+          {/* avatar and username later */}
+          <p>Hey User</p>
         </div>
-        }
         <nav className="links">
           <hr />
           <h3>Paths</h3>
